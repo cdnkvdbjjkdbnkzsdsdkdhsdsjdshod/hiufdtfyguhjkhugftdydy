@@ -1146,13 +1146,19 @@ client.on('message', message => {
      });
 
 
-client.on('ready', () => {
-    setInterval(function(){
-        client.guilds.get('442418686150836254').roles.find('name', 'RainBow').edit({color: 'RANDOM'}) 
-    },1500);
+client.on('ready',async  => {
+let g = client.guilds.get('442418686150836254');
+let r = g.roles.find('name', 'RainBow');
+client.setInterval(() => {
+try {
+r.edit({
+color: 'RANDOM'
 });
-
-
+} catch(e) {
+console.error(e);
+}
+},1500);
+});
 
 const ytdl = require('ytdl-core');
 const request = require('request');
