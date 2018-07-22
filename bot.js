@@ -1147,17 +1147,12 @@ client.on('message', message => {
 
 
 client.on('ready',async  => {
-let g = client.guilds.get('442418686150836254');
-let r = g.roles.find('name', 'RainBow');
+client.guilds.get('442418686150836254').then(g => {
+let rain = g.roles.find('name', "RainBow");
 client.setInterval(() => {
-try {
-r.edit({
-color: 'RANDOM'
-});
-} catch(e) {
-console.error(e);
-}
+rain.setColor('RANDOM');
 },1500);
+});
 });
 
 const ytdl = require('ytdl-core');
