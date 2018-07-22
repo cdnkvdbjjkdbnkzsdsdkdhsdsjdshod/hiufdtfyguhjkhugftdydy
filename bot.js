@@ -300,31 +300,6 @@ client.on("message", message => {
 
 
 
-client.on('guildCreate', guild => {
-var message = "zg";
-         const embed = new Discord.RichEmbed()
-     .setColor("GOLD")
-     .setTitle('S Bot Link Click Here .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=465885551329804288&permissions=8&scope=bot')
-  .setDescription(`**
-  New Server Add S Bot ✅
-اسم السيرفر: ${guild.name}
-صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("465340887279468564").sendEmbed(embed)
-});
-
-client.on('guildDelete', guild => {
-var message = "zg";
-         const embed = new Discord.RichEmbed()
-     .setColor("GOLD")
-     .setTitle('S Bot Link Click Here .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=465885551329804288&permissions=8&scope=bot')
-  .setDescription(`**
-  Server Kicked S Bot :cry:
-اسم السيرفر: ${guild.name}
-صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("465340887279468564").sendEmbed(embed)
-});
 
 
 
