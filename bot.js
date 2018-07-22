@@ -1131,7 +1131,7 @@ client.on('message', message => {
       r.edit({
         color: "RANDOM"
       });
-    },1500);
+    },10000);
   } catch(e) {
     if(e) console.error(e);
   }
