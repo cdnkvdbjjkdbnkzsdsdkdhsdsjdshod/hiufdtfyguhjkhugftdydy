@@ -103,7 +103,7 @@ let Embed = new Discord.RichEmbed()
 
 client.on('message', message => {
   const port = '25565'
-  if(message.content.startsWith('$mcstats')) {
+  if(message.content.startsWith(prefix +'mcstats')) {
  const args = message.content.split(" ").slice(1).join(" ")
     if (!args) return message.channel.send("** يجب كتابة ايدي السيرفر . **");
         let embed = new Discord.RichEmbed()
@@ -120,7 +120,7 @@ client.on('message', message => {
 client.on('message', message => {
               if(!message.channel.guild) return;
     var prefix = "$";
-    if(message.content.startsWith('$bc')) {
+    if(message.content.startsWith(prefix +'bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للإدارة**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية لاستعمال هاذا الأمر** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
@@ -231,7 +231,7 @@ var heroo = new Discord.RichEmbed()
 
 client.on('message', message => {
           let args = message.content.split(' ').slice(1);
-   if(message.content.split(' ')[0] == '$color'){
+   if(message.content.split(' ')[0] == '${prefix}color'){
            const embedd = new Discord.RichEmbed()
      .setFooter('Requested by '+message.author.username, message.author.avatarURL)
    .setDescription(`**لا يوجد لون بهذا الأسم ** :x: `)
@@ -306,14 +306,14 @@ client.on("message", message => {
 
 
 client.on('message', message => {
-    if(message.content.startsWith('$help')) {
+    if(message.content.startsWith(prefix+'help')) {
         
         message.channel.send('**[ لقد تم أرسال جميع أوامر البوت في الخاص :envelope_with_arrow: | Check your DM. ]**')
     }
 });
 
 client.on('message', message => {
-    if(message.content.startsWith('$help')) {
+    if(message.content.startsWith(prefix+'help')) {
    const embed = new Discord.RichEmbed()
 .setColor('RANDOM')
         .setDescription(`**
@@ -334,26 +334,26 @@ By , <@456641975932813345> - <@323885452207587329>
 }
 });
 client.on('message', message => {
-    if(message.content.startsWith('$help')) {
+    if(message.content.startsWith(prefix+'help')) {
    const embed = new Discord.RichEmbed()
 .setColor('RANDOM')
         .setDescription(`**
 General's Commands. :earth_asia: 
-$server - معلومات عن سيرفرك :scroll:   
-$user - معلومات عن حسابك :id: 
-$avatar - صورة بروفايلك الشخصي :frame_photo: 
-$time - الوقت الحالي - السعودية فقط :flag_sa: 
-$sar7 - لمصارحة شخص  :flushed: 
-$cal - آله حاسبة خاصةة بالبوت :calendar_spiral: 
-$voice - معرفة عدد المتواجدين بالصوت :microphone: 
-$allbots - رؤية جميع بوتات السيرفر :robot:
-$ping - رؤية سرعة اتصالك :stopwatch:  
-$mcstats - يعطيك معلومات لأي سيرفر ماين كرافتي :crossed_swords: 
-$serch - للبحث عن اسم شخص معك بالسيرفر :battery: 
-$channels - لرؤية رومات السيرفر :urn: 
-$at - لكتابة ما تكتبة في انجاز ماين كرافتي :hole: 
-$ft - رؤية احصائياتك في فورتنايت :lizard: 
-$color - لأختيار لونك في السيرفر :heart: 
+${prefix}server - معلومات عن سيرفرك :scroll:   
+${prefix}user - معلومات عن حسابك :id: 
+${prefix}avatar - صورة بروفايلك الشخصي :frame_photo: 
+${prefix}time - الوقت الحالي - السعودية فقط :flag_sa: 
+${prefix}sar7 - لمصارحة شخص  :flushed: 
+${prefix}cal - آله حاسبة خاصةة بالبوت :calendar_spiral: 
+${prefix}voice - معرفة عدد المتواجدين بالصوت :microphone: 
+${prefix}allbots - رؤية جميع بوتات السيرفر :robot:
+${prefix}ping - رؤية سرعة اتصالك :stopwatch:  
+${prefix}mcstats - يعطيك معلومات لأي سيرفر ماين كرافتي :crossed_swords: 
+${prefix}serch - للبحث عن اسم شخص معك بالسيرفر :battery: 
+${prefix}channels - لرؤية رومات السيرفر :urn: 
+${prefix}at - لكتابة ما تكتبة في انجاز ماين كرافتي :hole: 
+${prefix}ft - رؤية احصائياتك في فورتنايت :lizard: 
+${prefix}color - لأختيار لونك في السيرفر :heart: 
         **
         `)
     message.author.send(embed)
@@ -478,19 +478,19 @@ client.on('message', async message => {
 });
 
 client.on('message', message => {
-    if(message.content.startsWith('$help')) {
+    if(message.content.startsWith(prefix+'help')) {
    const embed = new Discord.RichEmbed()
 .setColor('RANDOM')
         .setDescription(`**
 Admin's Commands. :wrench: 
-$ban - أمر الباند :no_entry:
-$kick - أمر الباند  :outbox_tray:
-$cc - صنع ألوان :heart:
-$bc - البرودكاست :mega:
-$clear - مسح الشات :hourglass_flowing_sand: 
-$role - لأعطاء رتبة لـ أحد الأعضاء :key: 
-$rerole - لآزالة الرتبة من أحد الاعضاء 
-$move - لنقل الاعضاء الي رومك  :scales: 
+${prefix}ban - أمر الباند :no_entry:
+${prefix}kick - أمر الباند  :outbox_tray:
+${prefix}cc - صنع ألوان :heart:
+${prefix}bc - البرودكاست :mega:
+${prefix}clear - مسح الشات :hourglass_flowing_sand: 
+${prefix}role - لأعطاء رتبة لـ أحد الأعضاء :key: 
+${prefix}rerole - لآزالة الرتبة من أحد الاعضاء 
+${prefix}move - لنقل الاعضاء الي رومك  :scales: 
 
   **      `)
     message.author.send(embed)
@@ -498,7 +498,7 @@ $move - لنقل الاعضاء الي رومك  :scales:
 });
 
 client.on('message', message => {
-    if(message.content.startsWith('$help')) {
+    if(message.content.startsWith(prefix+'help')) {
    const embed = new Discord.RichEmbed()
 .setColor('RANDOM')
         .setDescription(`**
@@ -550,7 +550,7 @@ client.on('guildCreate', guild => {
 
 
   client.on('message', message => {
-    if (message.content.startsWith("$tr")) {
+    if (message.content.startsWith(prefix+"tr")) {
 
         const translate = require('google-translate-api');
         const Discord = require('discord.js');
@@ -767,7 +767,7 @@ client.on('message', message => {
            if (hours == 0) {
                hours = 12;
            }
-               if(message.content.startsWith('$time')) {
+               if(message.content.startsWith(prefix+'time')) {
                    const embed = new Discord.RichEmbed()
           .addField(`🕐 Time `,` ** 「  ${hours} : ${minutes} : ${suffix} 」**`)
 .addField(` :satellite: Date `,`**「 ${years} : ${month} : ${day} 」**`)
@@ -1110,7 +1110,7 @@ message.channel.send(embed)
 
 client.on('message', message => {
 
-  if(message.content.startsWith('$ping')) {
+  if(message.content.startsWith(prefix+'ping')) {
     message.channel.send('**:stopwatch: Pinging...**').then(sent => {
       sent.edit(`**Pong! Took ${sent.createdTimestamp - message.createdTimestamp} ms :stopwatch: **`)
 })
