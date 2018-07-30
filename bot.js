@@ -18,7 +18,7 @@ client.on('message', message => {
 const ms = require("ms");
 
 
-
+سمصتيغليعغهسنيتسيسغعيسليسيستياس
 
 
 
